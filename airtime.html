@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    var airtime = 0;
+    while (true) {
+      const options = prompt(
+        `Welcome to Focalleap Bank App!!
+        Pleas select one of the following:
+        1. Check Balance
+        2. Buy Airtime
+        3. Exit   `
+      );
+      if (options !== "1" && options !== "2" && options !== "3") {
+        alert(
+          `Invalid prompt!
+        Pleas select one of the following:
+        1. Check Balance
+        2. Buy Airtime
+        3. Exit `
+        );
+        continue;
+      }
+      if (options === "1") {
+        alert(`Balance: ${airtime}`);
+        continue;
+      } else if (options === "2") {
+        var amount = parseFloat(prompt("Enter amount:"));
+        airtime = airtime + amount;
+        continue;
+      } else if (options === "3") {
+        alert("Thank you!!");
+        break;
+      }
+    }
+  </script>
+</html>

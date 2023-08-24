@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    var balance = 0;
+    while (true) {
+      const options = prompt(`
+    Select one of the following:
+    1 ====> Check Balance
+    2 ====> Deposit
+    3 ====> Remove
+    exit to quit`);
+
+      if (options !== "1" && options !== "2" && options !== "3" && options !== "exit") {
+        alert(`Invalid
+        Select one of the following:
+        1 ====> Check Balance
+        2 ====> Deposit
+        3 ====> Remove
+        exit to quit`);
+        continue;
+      }
+
+      if (options === "1") {
+        alert(`Balance = ${balance}`);
+        continue;
+      } else if (options === "2") {
+        var amount = parseFloat(prompt("Enter amount:"));
+        balance = balance + amount;
+        continue;
+      } else if (options === "3") {
+        var amount = parseFloat(prompt("Enter amount:"));
+        if (amount > balance) {
+          alert("You do not have enough balance");
+          continue;
+        } else {
+          balance = balance - amount;
+        }
+      } else if (options === "exit") {
+        alert("Thank you!");
+        break;
+      }
+    }
+  </script>
+</html>
